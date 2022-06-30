@@ -1,0 +1,57 @@
+{
+	"name": "@inthepanchine/image-edit",
+	"version": "0.0.1",
+	"description": "A set of utilities for manipulating images.",
+	"main": "src/index.ts",
+	"scripts": {
+		"build:webpack:prod": "webpack --mode production --progress --stats-error-details",
+		"build:webpack:dev": "webpack --mode development --progress --watch --stats-error-details",
+		"build:tsc:dev": "tsc --watch",
+		"test": "serve -s __test__"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/inthepanchine/image-edit.git"
+	},
+	"keywords": [
+		"image",
+		"images",
+		"image",
+		"edit",
+		"image",
+		"editing",
+		"image",
+		"editor",
+		"image",
+		"manipulation",
+		"fabricjs",
+		"fabric",
+		"fabricjs",
+		"editor"
+	],
+	"author": "Liam Caccetta",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/inthepanchine/image-edit/issues"
+	},
+	"homepage": "https://github.com/inthepanchine/image-edit#readme",
+	"devDependencies": {
+		"@babel/cli": "^7.18.6",
+		"@babel/core": "^7.18.6",
+		"@babel/preset-typescript": "^7.18.6",
+		"@types/fabric": "^4.5.8",
+		"@typescript-eslint/eslint-plugin": "^5.30.0",
+		"@typescript-eslint/parser": "^5.30.0",
+		"babel-loader": "^8.2.5",
+		"eslint": "^8.18.0",
+		"serve": "^13.0.2",
+		"ts-loader": "^9.3.1",
+		"typedoc": "^0.23.2",
+		"typescript": "^4.7.4",
+		"webpack": "^5.73.0",
+		"webpack-cli": "^4.10.0"
+	},
+	"dependencies": {
+		"fabric": "^5.2.1"
+	}
+}
