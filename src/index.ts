@@ -14,4 +14,5 @@ export { CanvasShape } from "./core/shape";
 // ---------------------------------------------------------------------------
 // Implementation classes.
 // ---------------------------------------------------------------------------
-export { FileHandler } from "./implement/file";
+export { Render } from "./implement/render";
+export { CanvasRegion } from "./implement/region";

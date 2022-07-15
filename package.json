@@ -40,10 +40,12 @@
 		"@babel/core": "^7.18.6",
 		"@babel/preset-typescript": "^7.18.6",
 		"@types/fabric": "^4.5.8",
+		"@types/lodash": "^4.14.182",
 		"@typescript-eslint/eslint-plugin": "^5.30.0",
 		"@typescript-eslint/parser": "^5.30.0",
 		"babel-loader": "^8.2.5",
 		"eslint": "^8.18.0",
+		"lodash": "^4.17.21",
 		"serve": "^13.0.2",
 		"ts-loader": "^9.3.1",
 		"typedoc": "^0.23.2",
@@ -52,6 +54,8 @@
 		"webpack-cli": "^4.10.0"
 	},
 	"dependencies": {
-		"fabric": "^5.2.1"
+		"@types/uuid": "^8.3.4",
+		"fabric": "^5.2.1",
+		"uuid": "^8.3.2"
 	}
 }

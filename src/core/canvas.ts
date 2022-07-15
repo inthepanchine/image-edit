@@ -72,7 +72,7 @@ export class Canvas {
 	 *
 	 * @returns The size of the canvas.
 	 */
-	getSize = (): Size => ({...this.size});
+	getSize = (): Size => this.size;
 
 	/**
 	 * Load object into canvas.
@@ -81,6 +81,7 @@ export class Canvas {
 	 */
 	renderObject = (obj: fabric.Object) => {
 		this.canvas.add(obj);
+		this.canvas.setActiveObject(obj);
 		this.canvas.renderAll();
 	};
 
@@ -94,18 +95,48 @@ export class Canvas {
 		if (el === undefined) {
 			for (const obj of this.canvas.getActiveObjects()) {
 				this.canvas.remove(obj);
-				this.canvas.renderAll();
 			}
+			this.canvas.discardActiveObject();
 		} else if (Array.isArray(el)) {
 			for (const obj of el) {
 				this.canvas.remove(obj);
-				this.canvas.renderAll();
 			}
 		} else {
 			this.canvas.remove(el);
-			this.canvas.renderAll();
 		}
 	};
+
+	/**
+	 * Add an event listener on `event`.
+	 *
+	 * @param event The event to listen to.
+	 * @param callback The function to call on the event.
+	 */
+	addEvent = (event: string, callback: (e: fabric.IEvent<Event>) => void ) =>
+		this.canvas.on(event, (e: fabric.IEvent<Event>) => callback(e));
+
+	/**
+	 * Remove an event listener on `event`.
+	 *
+	 * @param event The event to remove the listener on.
+	 * @param callback The function to remove when the event is called.
+	 */
+	disableEvent = (event: string, callback: (e: fabric.IEvent<Event>) => void) =>
+		this.canvas.off(event, (e: fabric.IEvent<Event>) => callback(e));
+
+	/** 
+	 * Get selected objects.
+	 *
+	 * @returns The currently selected objects.
+	 */
+	selectedObjects = (): fabric.Object[] => this.canvas.getActiveObjects();
+
+	/**
+	 * Get the center of the canvas.
+	 *
+	 * @returns The center of the canvas.
+	 */
+	getCenter = () => ({ x: this.size.width / 2, y: this.size.height / 2 });
 
 	/** Handle canvas reponsiveness. */
 	private canvasResponsive = () => {
